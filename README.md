@@ -1,6 +1,6 @@
 # Freeband MusicBrainz add-on
 
-A metadata add-on for [Freeband](https://github.com/freeband-music/web-ui),
+A metadata add-on for [Freeband](https://github.com/freeband-music/web),
 an open-source music client, backed by the
 [MusicBrainz](https://musicbrainz.org) API. It implements the
 [Freeband add-on protocol](https://github.com/freeband-music/protocol)
