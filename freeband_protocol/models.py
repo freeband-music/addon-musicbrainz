@@ -162,7 +162,10 @@ class StreamResponse(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
     )
-    status: Status
+    status: Status = Field(
+        ...,
+        description='`ok`: at least one stream is ready to play. `queued`: nothing is playable yet, but the add-on has started preparing the track; ask again later (never sent when the request had `queue=false`). `not_found`: nothing playable for this request.',
+    )
     message: str | None = None
     streams: list[Stream] = Field(..., description='Ordered best first')
 
