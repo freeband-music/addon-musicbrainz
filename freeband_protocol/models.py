@@ -43,6 +43,10 @@ class ArtistSummary(BaseModel):
     id: str
     name: str
     image: AnyUrl | None = None
+    popularity: confloat(ge=0.0, le=100.0) | None = Field(
+        None,
+        description='Optional, 0 (unknown to listeners) to 100 (among the most played).',
+    )
 
 
 class AlbumSummary(BaseModel):
@@ -59,6 +63,10 @@ class AlbumSummary(BaseModel):
         description='Number of tracks on the album, when known.',
     )
     cover: AnyUrl | None = None
+    popularity: confloat(ge=0.0, le=100.0) | None = Field(
+        None,
+        description='Optional, 0 (unknown to listeners) to 100 (among the most played).',
+    )
 
 
 class TrackSummary(BaseModel):
@@ -78,6 +86,10 @@ class TrackSummary(BaseModel):
     duration_ms: int | None = Field(None, alias='durationMs')
     isrc: str | None = Field(
         None, description='International Standard Recording Code, when known.'
+    )
+    popularity: confloat(ge=0.0, le=100.0) | None = Field(
+        None,
+        description='Optional, 0 (unknown to listeners) to 100 (among the most played).',
     )
 
 
